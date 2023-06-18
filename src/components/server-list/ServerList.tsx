@@ -18,7 +18,7 @@ const columns: GridColDef[] = [
     { field: 'IsOfficial', headerName: 'Official' },
     { field: 'HasPassword', headerName: 'Password' },
     { field: 'AntiCheat', headerName: 'Anti Cheat' },
-    { field: 'Build', headerName: 'Build'},
+    { field: 'Build', headerName: 'Build', flex: 2},
 ];
 
 const DarkDataGrid = styled(DataGrid)(({ theme }) => ({
