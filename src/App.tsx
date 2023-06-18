@@ -1,6 +1,6 @@
-import React from 'react';
-import ServerList from './components/server-list/ServerList';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import React from 'react'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import ServerList from './components/server-list/ServerList.tsx'
 
 const darkTheme = createTheme({
   palette: {
@@ -28,17 +28,17 @@ const darkTheme = createTheme({
         ::-webkit-scrollbar-thumb:hover {
           background: #555; 
         }
-      `
-    }
-  }
-});
+      `,
+    },
+  },
+})
 
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
-    <ServerList />
+      <ServerList />
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App
