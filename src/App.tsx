@@ -2,7 +2,12 @@
 import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { GlobalStyles } from '@mui/system'
+import { Box } from '@mui/material';
 import ServerList from './components/server-list/ServerList.tsx'
+import GenericDistributionChart from './components/data/map-distribution-list/distribution-chart.tsx';
+import { ServerDataProvider } from './components/context/ServerDataContext.tsx';
+import ChartsContainer from './components/charts-container/ChartsContainer.tsx';
+
 
 const darkTheme = createTheme({
   palette: {
@@ -15,16 +20,35 @@ const darkTheme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={darkTheme}>
-      <GlobalStyles
-        styles={{
-          html: {
-            backgroundColor: '#121212',
-          },
-        }}
-      />
-      <ServerList />
-    </ThemeProvider>
+    <ServerDataProvider>
+      <ThemeProvider theme={darkTheme}>
+        <GlobalStyles
+          styles={{
+            html: {
+              backgroundColor: '#121212',
+            },
+          }}
+        />
+        <ServerList />
+        <ChartsContainer
+          heading='Server Distribution'
+          charts={[
+            { dataKey: "Map", title: "Map" },
+            { dataKey: "Gamemode", title: "Gamemode" },
+            { dataKey: "Region", title: "Region" }
+          ]}
+        />
+        <ChartsContainer
+          heading='Player Distribution'
+          charts={[
+            { dataKey: "Map", title: "Map", aggregatePlayers: true },
+            { dataKey: "Gamemode", title: "Gamemode", aggregatePlayers: true },
+            { dataKey: "Region", title: "Region", aggregatePlayers: true }
+          ]}
+        />
+
+      </ThemeProvider>
+    </ServerDataProvider>
   )
 }
 
