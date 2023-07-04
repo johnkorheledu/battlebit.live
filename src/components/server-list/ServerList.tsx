@@ -66,12 +66,6 @@ export default function ServerList() {
         sx={{marginBottom: 2, marginTop: 1, width: '100%'}}
       />
       <DarkDataGrid
-      componentsProps={{
-        toolbar: {
-            showQuickFilter: true,
-               quickFilterProps: { debounceMs: 500 },
-         },
-      }}
         rows={filteredRows}
         initialState={{ pagination: { paginationModel: { pageSize: 20 } } }}
         columns={columns}
