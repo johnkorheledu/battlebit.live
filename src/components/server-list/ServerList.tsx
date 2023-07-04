@@ -53,7 +53,7 @@ export default function ServerList() {
       />
       <DataGrid
         rows={filteredRows}
-        initialState={{ pagination: { paginationModel: { pageSize: 24 } } }}
+        initialState={{ pagination: { paginationModel: { pageSize: 20 } } }}
         columns={columns}
         density='compact'
         disableColumnMenu
