@@ -36,14 +36,14 @@ function App() {
             { dataKey: "Region", title: "Region" }
           ]}
         />
-        <ChartsContainer
+        {/* <ChartsContainer
           heading='Player Distribution'
           charts={[
             { dataKey: "Map", title: "Map", aggregatePlayers: true },
             { dataKey: "Gamemode", title: "Gamemode", aggregatePlayers: true },
             { dataKey: "Region", title: "Region", aggregatePlayers: true }
           ]}
-        />
+        /> */}
 
       </ThemeProvider>
     </ServerDataProvider>

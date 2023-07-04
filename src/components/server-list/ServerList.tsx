@@ -47,6 +47,7 @@ export default function ServerList() {
       <TextField 
         label="Search" 
         variant="outlined" 
+        size="small"
         onChange={(e) => setSearchTerm(e.target.value)}
         sx={{marginBottom: 2, marginTop: 1, width: '100%'}}
       />
