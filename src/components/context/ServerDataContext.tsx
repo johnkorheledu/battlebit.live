@@ -1,6 +1,5 @@
 /* eslint-disable react/function-component-definition */
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import { Switch, FormControlLabel } from '@mui/material';
 import { ServerData, getServerData } from '../../api/servers.ts';
 
 
@@ -12,7 +11,7 @@ export const ServerDataProvider: React.FC<object> = ({ children }) => {
 
   const fetchData = () => {
     getServerData().then((data) => {
-      const dataWithIds = data.map((item, index) => ({ id: item.Name, ...item }));
+      const dataWithIds = data.map((item) => ({ id: item.Name, ...item }));
       setServerData(dataWithIds);
     });
   }

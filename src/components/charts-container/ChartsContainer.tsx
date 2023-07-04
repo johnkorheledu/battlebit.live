@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-key */
 import React from 'react'
-import { Box, Typography, Divider } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import GenericDistributionChart from '../data/map-distribution-list/distribution-chart.tsx';
 
 interface ChartProps {

@@ -2,9 +2,7 @@
 import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { GlobalStyles } from '@mui/system'
-import { Box } from '@mui/material';
 import ServerList from './components/server-list/ServerList.tsx'
-import GenericDistributionChart from './components/data/map-distribution-list/distribution-chart.tsx';
 import { ServerDataProvider } from './components/context/ServerDataContext.tsx';
 import ChartsContainer from './components/charts-container/ChartsContainer.tsx';
 

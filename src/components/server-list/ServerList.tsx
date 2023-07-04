@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid'
-import { styled, Box, TextField } from '@mui/material'
+import { Box, TextField } from '@mui/material'
 import WbSunnyIcon from '@mui/icons-material/WbSunny'
 import NightsStayIcon from '@mui/icons-material/NightsStay'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
