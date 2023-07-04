@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { DataGrid, GridColDef, GridRenderCellParams } from '@mui/x-data-grid'
+import { DataGrid, GridColDef, GridFooter, GridFooterContainer, GridRenderCellParams } from '@mui/x-data-grid'
 import { Box, TextField } from '@mui/material'
 import WbSunnyIcon from '@mui/icons-material/WbSunny'
 import NightsStayIcon from '@mui/icons-material/NightsStay'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import CancelIcon from '@mui/icons-material/Cancel'
 import ServerDataContext from '../context/ServerDataContext.tsx';
+import PlayerCount from '../data/player-count/PlayerCount.tsx';
 
 
 const fields = ['Name', 'Map', 'MapSize', 'Gamemode', 'Region', 'Players', 'QueuePlayers', 'MaxPlayers', 'Hz', 'AntiCheat', 'Build', 'DayNight', 'IsOfficial', 'HasPassword']
@@ -30,6 +31,18 @@ const columns: GridColDef[] = fields.map((field) => {
   }
   return column;
 });
+
+function CustomFooter () {
+  return (
+    <GridFooterContainer>
+      <PlayerCount/>
+      <GridFooter sx={{
+        border: 'none'
+        }} />
+    </GridFooterContainer>
+  );
+}
+
 
 export default function ServerList() {
   const [searchTerm, setSearchTerm] = React.useState('')
@@ -59,6 +72,7 @@ export default function ServerList() {
         disableColumnMenu
         disableRowSelectionOnClick
         autoHeight
+        components={{Footer: CustomFooter}}
       />
     </Box>
   )
